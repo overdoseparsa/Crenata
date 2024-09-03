@@ -2,11 +2,61 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from collections import UserDict # TODO یه کاکشن تایبی که بتونم کنترل کنم تای
+get_or_replace_env_ = lambda get , replace_if_not  : os.environ.get(get  , replace_if_not)
+ver_error = """
+you dont have add Enviremen Variable PATH for external settings_logs 
+to config you have two choice 
+1)add export SETTINGS_PATH="your settings path" 
+2)or change your config of TYPE_SETTINGS to defualt internal 
+"""
+def create_difrents(iter1:list,iter2:list)->list:
+    resualt = []
+    for va in iter2 : 
+        if not (va in iter1) :
+            resualt.append(va)
+    return resualt 
 
 
 def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Oyosa.settings')
+    # settings is ceateed 
+    """Run administrative tasks.""" # this is defualt  # defualt dict 
+    def PACKING_PATH_SEETINGS():
+        data_type_settings = {
+            "internal":True  , 
+            "external":False , 
+
+        }
+        settings_log =  {
+            'type':data_type_settings.get(get_or_replace_env_('TYPE_SETTINGS'  , "internal")) , 
+            'Path':get_or_replace_env_('SETTINGS_PATH' ,None) # what im i do 
+        }
+
+        
+        if settings_log['type']:
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Oyosa.settings')
+            print(
+                'we user internal'.title() , settings_log['type']
+            )
+        else : 
+            print(
+                'we user external'.title() , settings_log['type']
+            )
+            Path_join:str = settings_log['Path'] # this is from path join 
+            print(Path_join)
+
+            if (not Path_join):
+                from GUICONTROLL.settings import Gui  # this is start 
+                PACKING_PATH_SEETINGS()
+                
+
+            else : 
+                os.environ.setdefault('DJANGO_SETTINGS_MODULE' , '.'.join(create_difrents(os.getcwd().split('/')
+                ,  Path_join.split('/')))[:-3])
+                print('.'.join(create_difrents(os.getcwd().split('/')
+                ,  Path_join.split('/'))))
+    PACKING_PATH_SEETINGS()
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
