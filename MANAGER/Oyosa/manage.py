@@ -11,6 +11,10 @@ to config you have two choice
 2)or change your config of TYPE_SETTINGS to defualt internal 
 """
 def create_difrents(iter1:list,iter2:list)->list:
+    """
+    This is the temporary function to get the difrentes two list in a new list 
+    """.title()
+
     resualt = []
     for va in iter2 : 
         if not (va in iter1) :
@@ -22,7 +26,7 @@ def main():
     # settings is ceateed 
     """Run administrative tasks.""" # this is defualt  # defualt dict 
     def PACKING_PATH_SEETINGS():
-        data_type_settings = {
+        data_type_settings = {  # use lambda functions 
             "internal":True  , 
             "external":False , 
 
@@ -34,10 +38,9 @@ def main():
 
         
         if settings_log['type']:
-            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Oyosa.settings')
-            print(
-                'we user internal'.title() , settings_log['type']
-            )
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Oyosa.settings') # settings is the file.py settings here
+
+
         else : 
             print(
                 'we user external'.title() , settings_log['type']
@@ -47,15 +50,15 @@ def main():
 
             if (not Path_join):
                 from GUICONTROLL.settings import Gui  # this is start 
-                PACKING_PATH_SEETINGS()
+                PACKING_PATH_SEETINGS() #  تابع بازگشتی 
                 
 
             else : 
                 os.environ.setdefault('DJANGO_SETTINGS_MODULE' , '.'.join(create_difrents(os.getcwd().split('/')
                 ,  Path_join.split('/')))[:-3])
                 print('.'.join(create_difrents(os.getcwd().split('/')
-                ,  Path_join.split('/'))))
-    PACKING_PATH_SEETINGS()
+                ,  Path_join.split('/')))) # this is for test 
+    PACKING_PATH_SEETINGS() # CALL FUNCTIONS 
 
     try:
         from django.core.management import execute_from_command_line
