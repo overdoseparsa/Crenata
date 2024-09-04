@@ -161,7 +161,7 @@ class TAGS(models.Model):
     def __str__(self) -> str:
         return f'{self.name_tags}'
 
-
+# it changes feom git
 class Followers(models.Model):
     followers = models.ManyToManyField(
         settings.AUTH_USER_MODEL
