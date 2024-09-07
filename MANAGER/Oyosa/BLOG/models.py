@@ -7,9 +7,13 @@ from django.contrib.auth.models import User # this is when i want have test or u
 from django.conf import settings 
 from django.contrib.auth import get_user_model
 # we change get_user_models
-
+# install postgress 
 # Create your models here.
 # this is about weh nwe change User
+
+# grop for all 
+# grop for my 
+
 class Category(models.Model):
     title = models.CharField(
         max_length=255 , verbose_name=_('title')
@@ -163,6 +167,8 @@ class TAGS(models.Model):
 
 # it changes feom git
 class Followers(models.Model):
+    user = models.ForeignKey(User , on_delete=models.CASCADE ,related_name=f'USER_FOLLOWING')
+
     followers = models.ManyToManyField(
         settings.AUTH_USER_MODEL
     )
@@ -170,9 +176,11 @@ class Followers(models.Model):
     def __str__(self) -> str:
         return f'{self.time_add}'
 
-
+    def __str__(self) -> str:
+        return super().__str__()
 
 class Following(models.Model):
+    user = models.ForeignKey(User , on_delete=models.CASCADE ,related_name=f'User_FOLLOWER')
     Following = models.ManyToManyField(
         settings.AUTH_USER_MODEL
     )
@@ -180,3 +188,12 @@ class Following(models.Model):
     def __str__(self) -> str:
         return f'{self.time_add}'
 
+class GroupLevelPost(models.Model):
+    name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
+    uudi = models.UUIDField()
+    posts = models.ManyToManyField(Post)
+
+class GroupAccount(models.Model):
+    name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
+    uudi = models.UUIDField()
+    accounts = models.ManyToManyField(User)
