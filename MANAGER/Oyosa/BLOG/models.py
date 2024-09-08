@@ -27,6 +27,9 @@ class Category(models.Model):
         # USER  
     )
     
+    followers_katalog = models.ManyToManyField(
+        User , related_name="followers_katalog_user"
+    )
     def __str__(self) -> str:
         return f'{self.title}'
 
