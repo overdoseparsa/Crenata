@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Post  , Category    , Followers , Following
+# createed models admin for all models 
 
 admin.site.register(Post)
 admin.site.register(Category)
