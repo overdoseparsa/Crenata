@@ -30,6 +30,7 @@ class Category(models.Model):
     followers_katalog = models.ManyToManyField(
         User , related_name="followers_katalog_user"
     )
+
     def __str__(self) -> str:
         return f'{self.title}'
 
@@ -200,3 +201,4 @@ class GroupAccount(models.Model):
     name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
     uudi = models.UUIDField()
     accounts = models.ManyToManyField(User)
+# migrate 

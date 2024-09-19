@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% for post in posts %}
+<h1>{{post.author.name}}</h1>
+<p>{{post.title}}</p>
+<p>{{post.category}}</p>
+<p>{{post.body}}</p>
+
+
+{% endfor %}
+</body>
+</html> 
