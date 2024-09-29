@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize' , 
     'BLOG.apps.BlogConfig' , 
+    
     
 ]
 
@@ -118,9 +120,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
+STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = 'static/'
-
+print(STATIC_ROOT)
 # STATICFILES_DIRS = [
 #    Path.joinpath('../BLOG/templates' , BASE_DIR),
 # ]

@@ -4,7 +4,7 @@ from django.http import HttpResponse , HttpResponseBadRequest
 from .models import Post , User
 # Create your views here.
 
-class AcViews(View):
+class AcViews(View): # this is classed base views 
     act_views = 0 
     templates_for_get_page = "post.html"
      
@@ -19,3 +19,8 @@ class AcViews(View):
         AcViews.act_views += 1 
         print(AcViews.act_views)
         return render(requests , AcViews.templates_for_get_page , context=context)    
+
+
+# this is the view from the post accoutns 
+
+

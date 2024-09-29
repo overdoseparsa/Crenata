@@ -13,6 +13,7 @@ from django.contrib.auth import get_user_model
 
 # grop for all 
 # grop for my 
+# use relatede name for the databases ... iner join 
 
 class Category(models.Model):
     title = models.CharField(
