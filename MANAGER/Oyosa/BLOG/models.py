@@ -6,6 +6,7 @@ from django.utils import timezone # this is the datetime
 from django.contrib.auth.models import User # this is when i want have test or use simple user of django 
 from django.conf import settings 
 from django.contrib.auth import get_user_model
+from django.urls import reverse 
 # we change get_user_models
 # install postgress 
 # Create your models here.
@@ -14,6 +15,11 @@ from django.contrib.auth import get_user_model
 # grop for all 
 # grop for my 
 # use relatede name for the databases ... iner join 
+# class Profile(models.Model):
+#     User = models.OneToOneField(
+#         User , related_name='User_profiles'
+#     )
+#     # editable add for profiles 
 
 class Category(models.Model):
     title = models.CharField(
@@ -51,10 +57,12 @@ class Post(models.Model):
         get_user_model(), # this is return seetings models 
         on_delete=models.CASCADE,
         verbose_name=_("User") , 
-        help_text=_("this is the user include")
+        help_text=_("this is the user include") , 
+        related_name='USER_POST'
     )
     category  = models.ForeignKey( # this is for category 
-        Category , on_delete=models.DO_NOTHING
+        Category , on_delete=models.DO_NOTHING , 
+        related_name="CATEGORY_POST" , 
     )
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
@@ -76,14 +84,26 @@ class Post(models.Model):
         verbose_name = _("Post")
 
     def __str__(self) -> str:
-        return '%s  --  %s '%(self.title , self.created.strftime('%y/%m/%d -- %H:%M-%S'))
+        return ' id is %i %s  --  %s '%(self.id,self.title , self.created.strftime('%y/%m/%d -- %H:%M-%S'))
     # time_publishd = models.DateTimeField(
     #     default=timezone.now # we change from settings settings of time 
     # )
-# simple Foring key 
+    #   this is re
+    def append_urls_like(self):
+        return reverse(
+            'like_post' , 
+            kwargs={
+                'post_id':self.id
+
+            }
+        )
+
+
+
+
 class Media(models.Model):
     post = models.ForeignKey(
-        Post , on_delete=models.CASCADE , verbose_name=_("Post")
+        Post , on_delete=models.CASCADE , verbose_name=_("Post") , related_name='POST_MEDIA'
     )
     title = models.CharField(max_length=255 , verbose_name=_('title media'))
     is_ruls = models.BooleanField(blank=False)
@@ -100,7 +120,7 @@ class Media(models.Model):
 
 class Transmisson(models.Model):
     post = models.ForeignKey(
-        Post , on_delete=models.CASCADE , verbose_name=_("Post")
+        Post , on_delete=models.CASCADE , verbose_name=_("Post") ,related_name='POST_TRANS'
     )
     like = models.BigIntegerField(verbose_name=_('like'))
     dislike = models.BigIntegerField(verbose_name=_('dslike'))
@@ -120,15 +140,16 @@ class Commants(models.Model):
     class TypeComment(models.TextChoices):
         PRIVATE = 'PR' , _('private')
         PUBLIC = 'PB' , _('public')
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+    user = models.ForeignKey( # we dont need related name for this 
+        settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE,
         verbose_name=_("User off comments") , 
-        help_text=_("this is the user include")
+        help_text=_("this is the user include") ,  
+        
         
     )
     post = models.ForeignKey(
-        Post , on_delete=models.CASCADE , verbose_name=_("Post") 
+        Post , on_delete=models.CASCADE , verbose_name=_("Post")  , related_name="POST_COMMENTS"
     )
     TEXT = models.TextField(max_length=1000 ,
     blank= False , verbose_name=_("text"))
@@ -158,7 +179,7 @@ class Commants(models.Model):
 class TAGS(models.Model):
     name_tags = models.CharField(max_length=120 ,  verbose_name=_("typeoff commant"))
     post = models.ManyToManyField(
-        Post
+        Post , related_name="POST_TAGS"
     )
     followings_len = models.BigIntegerField(
     )
@@ -172,7 +193,7 @@ class TAGS(models.Model):
 
 # it changes feom git
 class Followers(models.Model):
-    user = models.ForeignKey(User , on_delete=models.CASCADE ,related_name=f'USER_FOLLOWING')
+    user = models.ForeignKey(User , on_delete=models.CASCADE ,related_name='USER_FOLLOWING')
 
     followers = models.ManyToManyField(
         settings.AUTH_USER_MODEL
@@ -193,13 +214,13 @@ class Following(models.Model):
     def __str__(self) -> str:
         return f'{self.time_add}'
 
-class GroupLevelPost(models.Model):
-    name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
-    uudi = models.UUIDField()
-    posts = models.ManyToManyField(Post)
+# class GroupLevelPost(models.Model):
+#     name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
+#     uudi = models.UUIDField()
+#     posts = models.ManyToManyField(Post)
 
-class GroupAccount(models.Model):
-    name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
-    uudi = models.UUIDField()
-    accounts = models.ManyToManyField(User)
-# migrate 
+# class GroupAccount(models.Model):
+#     name = models.CharField(max_length=100 , blank=False , verbose_name=_("titlegroub"))
+#     uudi = models.UUIDField()
+#     accounts = models.ManyToManyField(User)
+# # migrate 
