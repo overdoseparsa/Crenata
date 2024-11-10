@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" action=""> <!--this is get from for send data-->
+        1 <input type="text" name="qsearch" > <br><br>
+        <input type="submit"  value="submit">
+    </form>
+    {% for p in post %}
+      <a href="#">{{p.title}}</a>
+      <h3>
+        {{p.body}}
+        
+      </h3>
+    {% endfor %}
+</body>
+</html>

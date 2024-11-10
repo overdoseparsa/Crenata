@@ -1,6 +1,17 @@
+
 {% extends "renderprofile.html" %}
+{% load humanize %}
+{% load static %}
+{% block title %}
+  {{name}}  {% comment %}
+    this is __str__ from user.objects.get(username)
+  {% endcomment %}
+{% endblock title %}
+
+
 {% block post %}
-{% for user in post %}
+{% for user in USERS.post %}
+
 {% if post.media %}
 
 this is when we have media 
@@ -20,21 +31,89 @@ this is when we have media
 this is when we dont have media  
 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
   <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-  <span class="w3-right w3-opacity">1 min</span>
-  <h4>John Doe</h4><br>
+  <span class="w3-right w3-opacity">{{user.updated | naturaltime  }}</span>
+  <h4>{{user.title}}</h4><br>
   <hr class="w3-clear">
   <p>{{user.body}}</p>
+  <p class="tags">
+    {% for tag in user.tags.all  %}
+    <h1>{{tags.name}}</h1>
+    <a href="">{{t}}</a> TODO use tags here
+
+  
+    {% endfor %}
+  </p>
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half">
-        <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+        <!-- <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom"> -->
+        <a href="#" style="color: aquamarine;"><h4>* {{user.category.title}} from {{user.category.user}}</h4></a> {% comment %}
+          we create the link for this
+        {% endcomment %}
       </div>
       <div class="w3-half">
-        <p>{{post.object.body}}</p>
-
+    
     </div>
   </div>
   <a href  = {{user.append_urls_like}} , class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</a> 
-  <a class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</a> 
+  <blockquote class="poem">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <div class="container">
+    {% for comment in user.POST_COMMENTS.all %}
+      <div class="row">
+        <div class="col-md-8">
+            <div class="media g-mb-30 media-comment">
+                <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                  <div class="g-mb-15">
+                    <h5 class="h5 g-color-gray-dark-v1 mb-0"><a href="{{user.include_username}}">
+                      {{comment.user}} {% comment %}
+                        this is __str__ because we dont use user name 
+                      {% endcomment %}
+                    </a></h5>
+                    <span class="g-color-gray-dark-v4 g-font-size-12">{{comment.commented_time | naturaltime }}</span>
+                  </div>
+            
+                  <p>
+                    {{comment.TEXT}}
+                  </p>
+
+                  <ul class="list-inline d-sm-flex my-0">
+                    <li class="list-inline-item g-mr-20">
+                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                        <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                        {{comment.like}}
+                      </a>
+                    </li>
+                    <li class="list-inline-item g-mr-20">
+                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                        <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
+                        {{comment.dislike}}
+                      </a>
+                    </li>
+                    <li class="list-inline-item ml-auto">
+                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                        <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                        Reply
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        <div class="col-md-8">
+    
+        </div>
+    </div>
+    </div>
+    </blockquote>
+    
+
+  <form method="post" , action="{% url "BLOG:comment_post" name user.id %}">
+    {{form.as_p}}
+    {% csrf_token %} 
+    <input type="submit" , class="w3-button w3-theme-d2 w3-margin-bottom" , value=" Comment"></button>
+  </form>
 {% endif  %}
 
 </div>
@@ -56,4 +135,21 @@ this is when we dont have media
 </div>
 <br>
 {{info}}
+
 {% endblock post %}
+{% block info %}
+{% if name.first_name and name.first_name %}
+<p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>{{name.first_name}} | {{name.last_name}} </p>
+{% else %}
+{% endif %}
+<p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{{name.email}}</p>
+<p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>{{ name.date_joined |  naturalday}}</p> 
+{% endblock info %}
+
+{% block categories %}
+
+{% for category in name.USER_Categorys.all %}
+<span class="w3-tag w3-small w3-theme-l4">{{category}}</span>
+{% endfor %}
+
+{% endblock %}

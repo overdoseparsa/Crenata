@@ -19,12 +19,18 @@ from django.contrib import admin
 from django.urls import path , include
 from debug_toolbar.toolbar import debug_toolbar_urls
 
+'''
+base urls conf user 
 
+'''
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('' , include('BLOG.urls') , name="BlogUrls") , 
+    path('admin/', admin.site.urls ),
+    path('' , include('BLOG.urls' ,namespace='BLOG') , name="BlogUrls") , 
+    path('tasks/' , include('tasks.urls') , name='tasks') ,   # this is for simple taskes 
+    path('new/' , include('OYASALOG.acurls') , name='') , 
 ]
 #add debugtoolbar
 urlpatterns+= debug_toolbar_urls() #__debug__ 
+

@@ -1,0 +1,1177 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-10-17T17:03:44.362Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "تست",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-10-20T06:03:18.830Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Learn English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-10-20T06:03:23.162Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Learn English",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Followers katalog\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-10-21T11:20:30.336Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "http://127.0.0.1:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-10-21T11:21:01.180Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "127.0.0.1:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add category",
+    "content_type": 7,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change category",
+    "content_type": 7,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete category",
+    "content_type": 7,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view category",
+    "content_type": 7,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add followers",
+    "content_type": 8,
+    "codename": "add_followers"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change followers",
+    "content_type": 8,
+    "codename": "change_followers"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete followers",
+    "content_type": 8,
+    "codename": "delete_followers"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view followers",
+    "content_type": 8,
+    "codename": "view_followers"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add following",
+    "content_type": 9,
+    "codename": "add_following"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change following",
+    "content_type": 9,
+    "codename": "change_following"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete following",
+    "content_type": 9,
+    "codename": "delete_following"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view following",
+    "content_type": 9,
+    "codename": "view_following"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Post",
+    "content_type": 10,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Post",
+    "content_type": 10,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Post",
+    "content_type": 10,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Post",
+    "content_type": 10,
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add tags",
+    "content_type": 11,
+    "codename": "add_tags"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change tags",
+    "content_type": 11,
+    "codename": "change_tags"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete tags",
+    "content_type": 11,
+    "codename": "delete_tags"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view tags",
+    "content_type": 11,
+    "codename": "view_tags"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add tagsmodels",
+    "content_type": 12,
+    "codename": "add_tagsmodels"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change tagsmodels",
+    "content_type": 12,
+    "codename": "change_tagsmodels"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete tagsmodels",
+    "content_type": 12,
+    "codename": "delete_tagsmodels"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view tagsmodels",
+    "content_type": 12,
+    "codename": "view_tagsmodels"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add transmisson",
+    "content_type": 13,
+    "codename": "add_transmisson"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change transmisson",
+    "content_type": 13,
+    "codename": "change_transmisson"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete transmisson",
+    "content_type": 13,
+    "codename": "delete_transmisson"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view transmisson",
+    "content_type": 13,
+    "codename": "view_transmisson"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add usertokenuddd",
+    "content_type": 14,
+    "codename": "add_usertokenuddd"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change usertokenuddd",
+    "content_type": 14,
+    "codename": "change_usertokenuddd"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete usertokenuddd",
+    "content_type": 14,
+    "codename": "delete_usertokenuddd"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view usertokenuddd",
+    "content_type": 14,
+    "codename": "view_usertokenuddd"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add action apitoken",
+    "content_type": 15,
+    "codename": "add_actionapitoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change action apitoken",
+    "content_type": 15,
+    "codename": "change_actionapitoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete action apitoken",
+    "content_type": 15,
+    "codename": "delete_actionapitoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view action apitoken",
+    "content_type": 15,
+    "codename": "view_actionapitoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add media",
+    "content_type": 16,
+    "codename": "add_media"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change media",
+    "content_type": 16,
+    "codename": "change_media"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete media",
+    "content_type": 16,
+    "codename": "delete_media"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view media",
+    "content_type": 16,
+    "codename": "view_media"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add commants",
+    "content_type": 17,
+    "codename": "add_commants"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change commants",
+    "content_type": 17,
+    "codename": "change_commants"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete commants",
+    "content_type": 17,
+    "codename": "delete_commants"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view commants",
+    "content_type": 17,
+    "codename": "view_commants"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 18,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 18,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 18,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view tag",
+    "content_type": 18,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": 19,
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": 19,
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": 19,
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": 19,
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add site",
+    "content_type": 20,
+    "codename": "add_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change site",
+    "content_type": 20,
+    "codename": "change_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete site",
+    "content_type": 20,
+    "codename": "delete_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view site",
+    "content_type": 20,
+    "codename": "view_site"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$sACilOyIby2ezmtmkoF4pp$STgMjhaQ6LVpse8nTB3w8eBX8NVO0q7z0h8xwSRFO/Q=",
+    "last_login": "2024-10-17T16:53:59.577Z",
+    "is_superuser": true,
+    "username": "parsa",
+    "first_name": "",
+    "last_name": "",
+    "email": "parsa@parsa.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-10-17T16:53:25.998Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$Ws9kAPdSUKNQtV7yTld9uu$H6DsgT65CalI8V09tMyhZ+kKcFWYdpEV3L05Sha9DZ0=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "parsakhakiy",
+    "first_name": "",
+    "last_name": "",
+    "email": "k@k.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-10-20T06:01:40.478Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "followers"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "following"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "tags"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "tagsmodels"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "transmisson"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "usertokenuddd"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "actionapitoken"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "media"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "BLOG",
+    "model": "commants"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "taggit",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "taggit",
+    "model": "taggeditem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "sites",
+    "model": "site"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xv1qjrjy8ei8kmiovz6ow64wnit84c8y",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlnxxj8o6TmDteu1cQDZUpxUiLuTSCmgGmnem3mLgOtSwtrTHCYWF6HE6bcjjM9Ud8APrPcmY6vLPJHcFXnQLm-N0-t6uH8HBXvZ1ghpoMTAMZPnaBiV0UNm1KPnZN15HCwQwhbOZ4hWRQfaZW2VRwIjPl8Nbjgh:1t1Tl9:I_KctRUENNcq2OEv0x_bJptOUidtsGkdegUKMGi6VkQ",
+    "expire_date": "2024-10-31T16:53:59.581Z"
+  }
+},
+{
+  "model": "BLOG.category",
+  "pk": 1,
+  "fields": {
+    "title": "تست",
+    "is_active": true,
+    "user": 1,
+    "followers_katalog": [
+      1
+    ]
+  }
+},
+{
+  "model": "BLOG.category",
+  "pk": 2,
+  "fields": {
+    "title": "Learn English",
+    "is_active": true,
+    "user": 1,
+    "followers_katalog": [
+      1
+    ]
+  }
+},
+{
+  "model": "BLOG.post",
+  "pk": 1,
+  "fields": {
+    "title": "asdsadas",
+    "slug": "",
+    "author": 1,
+    "category": 1,
+    "body": "asdsadsadسشیسشیس",
+    "publish": "2024-10-17T17:04:05.303Z",
+    "created": "2024-10-17T17:04:05.322Z",
+    "updated": "2024-10-17T17:04:05.323Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "BLOG.post",
+  "pk": 2,
+  "fields": {
+    "title": "آموزش زبان انگلیسی",
+    "slug": "",
+    "author": 2,
+    "category": 2,
+    "body": "با یادگیری هر زبانی، دروازه دنیایی جدید به روی انسان باز می‌شود. دنیایی که آداب و رسوم، فرهنگ، علم و خصوصیات مردمی که به آن زبان صحبت می‌کنند را در دسترس زبان‌آموز قرار می‌دهد. از طرفی زبان انگلیسی بیش از یک و نیم میلیارد گویش‌ور در سراسر دنیا دارد که بیش از یک میلیارد نفر آن‌ها انگلیسی را به عنوان زبان دوم خود آموخته‌اند. به همین جهت یادگیری زبان انگلیسی نه تنها دنیای گویش‌ورهای بومی‌زبان انگلیسی، بلکه دنیای کسانی که انگلیسی زبان دوم آن‌هاست را هم در اختیار زبان‌آموز می‌گذارد.\r\n\r\nبا افزایش میزان استفاده از اینترنت و شبکه‌های اجتماعی، زبان انگلیسی به زبان مشترک غیر رسمی جهان تبدیل شده است. انگلیسی نه تنها زبان بین‌المللی ارتباطات و کسب‌وکار است، بلکه زبان رسانه‌ها و سرگرمی‌های مردم جهان هم به شمار می‌رود. به همین جهت ضرورت یادگیری این زبان هر روز بیشتر و بیشتر می‌شود. \r\n\r\nدر مجموعه آموزش‌های زبان انگلیسی فرادرس، به مباحث لازم برای یادگیری چهار مهارت اصلی زبان، یعنی «خواندن»، «نوشتن»، «شنیدن» و «صحبت کردن» برای زبان‌آموزها پرداخته شده است. همچنین دوره‌های پیشرفته‌تر و حرفه‌ای‌تری برای افرادی تهیه شده است که قصد مهاجرت تحصیلی یا کاری، یا شرکت در آزمون‌های بین‌المللی را دارند. مجموعه فیلم‌های آموزش گرامر نیز به شکل گام به گام از سطح مبتدی تا بالاتر در اختیار زبان‌آموزهای هر مقطعی قرار گرفته است.",
+    "publish": "2024-10-20T06:04:52.844Z",
+    "created": "2024-10-20T06:04:52.863Z",
+    "updated": "2024-10-20T06:04:52.863Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "BLOG.post",
+  "pk": 3,
+  "fields": {
+    "title": "sdad",
+    "slug": "",
+    "author": 2,
+    "category": 1,
+    "body": "adasdad",
+    "publish": "2024-10-20T12:58:34.652Z",
+    "created": "2024-10-20T12:58:34.667Z",
+    "updated": "2024-10-20T12:58:34.667Z",
+    "status": "DF"
+  }
+},
+{
+  "model": "BLOG.post",
+  "pk": 4,
+  "fields": {
+    "title": "سرایه داری",
+    "slug": "",
+    "author": 2,
+    "category": 2,
+    "body": "بننسشبنسشکمبسشبکم",
+    "publish": "2024-10-21T10:35:12.015Z",
+    "created": "2024-10-21T10:35:12.023Z",
+    "updated": "2024-10-21T10:35:12.023Z",
+    "status": "DF"
+  }
+},
+{
+  "model": "BLOG.post",
+  "pk": 5,
+  "fields": {
+    "title": "درخواست تعویز لوله",
+    "slug": "",
+    "author": 2,
+    "category": 1,
+    "body": "سجیخشجیحشخ",
+    "publish": "2024-10-21T10:37:36.527Z",
+    "created": "2024-10-21T10:37:36.545Z",
+    "updated": "2024-10-21T10:37:36.545Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "BLOG.commants",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "post": 2,
+    "TEXT": "خیلی هم عالی مشتاقانه در اناظلبثخ تشحخحبتبحخشب",
+    "like": null,
+    "dilike": null,
+    "report": null,
+    "media": "",
+    "type_commant": "PR",
+    "commented_time": "2024-10-20T07:43:44.788Z"
+  }
+},
+{
+  "model": "BLOG.commants",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "post": 2,
+    "TEXT": "sadadas",
+    "like": null,
+    "dilike": null,
+    "report": null,
+    "media": "",
+    "type_commant": "PR",
+    "commented_time": "2024-10-20T12:54:55.158Z"
+  }
+},
+{
+  "model": "BLOG.commants",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "post": 5,
+    "TEXT": "sghicsafafhsaf",
+    "like": null,
+    "dilike": null,
+    "report": null,
+    "media": "",
+    "type_commant": "PR",
+    "commented_time": "2024-10-21T10:38:03.999Z"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 1,
+  "fields": {
+    "name": "ENGLISH",
+    "slug": "english"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "زبان",
+    "slug": "زبان"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 1,
+  "fields": {
+    "tag": 1,
+    "content_type": 10,
+    "object_id": 2
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 2,
+  "fields": {
+    "tag": 2,
+    "content_type": 10,
+    "object_id": 2
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "127.0.0.1:8000",
+    "name": "127.0.0.1:8000"
+  }
+}
+]

@@ -1,0 +1,13 @@
+parsa = JsonCode('myjson.json')
+
+parsa.add(
+    'post':'hello this is soo god for us'
+)
+
+
+parsa.save()
+# output 
+{
+    'post':'hello this is soo god for us' ,  
+    'image': 'hello from' 
+}

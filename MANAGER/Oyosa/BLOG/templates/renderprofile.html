@@ -2,6 +2,7 @@
 
 {% block linker %}
   {% include "link.html" %}
+  {% include  "scrollC.html" %}
 {% endblock linker %}
 
 {% block content %}
@@ -16,10 +17,13 @@
           <div class="w3-container">
            <h4 class="w3-center">My Profile</h4>
            <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+           
            <hr>
+           {% block info %}
            <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
            <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+          {% endblock %} <!-- this is for info from persons-->
           </div>
         </div>
         <br>
@@ -66,8 +70,11 @@
         <!-- Interests --> 
         <div class="w3-card w3-round w3-white w3-hide-small">
           <div class="w3-container">
-            <p>Interests</p>
+            <p>categories</p>
             <p>
+            {% block categories %}
+              
+            
               <span class="w3-tag w3-small w3-theme-d5">News</span>
               <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
               <span class="w3-tag w3-small w3-theme-d3">Labels</span>
@@ -79,6 +86,7 @@
               <span class="w3-tag w3-small w3-theme-l3">Design</span>
               <span class="w3-tag w3-small w3-theme-l4">Art</span>
               <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+              {% endblock categories %}
             </p>
           </div>
         </div>

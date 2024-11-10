@@ -1,3 +1,4 @@
+from typing import Iterable
 from django.db import models
 from django.utils.translation import gettext as _  # this is for tranlations 
 from django.conf import settings 
@@ -5,8 +6,11 @@ from django.db import models
 from django.utils import timezone # this is the datetime 
 from django.contrib.auth.models import User # this is when i want have test or use simple user of django 
 from django.conf import settings 
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model 
 from django.urls import reverse 
+from taggit.managers import TaggableManager
+from taggit.models import TaggedItemBase , ItemBase
+from taggit.models import Tag
 # we change get_user_models
 # install postgress 
 # Create your models here.
@@ -20,6 +24,30 @@ from django.urls import reverse
 #         User , related_name='User_profiles'
 #     )
 #     # editable add for profiles 
+# show this token for profiles 
+# TODO add the inhertnace from taggit and learn how i do workd 
+class TAGSMODELS(TaggedItemBase):
+    user = models.ForeignKey(
+        User , on_delete=models.CASCADE   , related_name='TAGS_CREATED' , 
+    )
+
+# add the tags manaegr to the manger post 
+class USERTOKENUDDD(models.Model):
+    user =  models.OneToOneField(
+        User , on_delete=models.CASCADE , related_name='User_TOKEN' , 
+    )
+    token = models.CharField(max_length=32 , unique=True)
+    def __str__(self) -> str:
+        return '%s'%self.user.username
+
+class ActionAPITOKEN(models.Model):
+    token = models.ForeignKey(
+        USERTOKENUDDD , on_delete=models.CASCADE , related_name='TOKENS_ACTION'
+    )
+    title = models.CharField(
+        max_length=480   
+    )
+
 
 class Category(models.Model):
     title = models.CharField(
@@ -30,8 +58,8 @@ class Category(models.Model):
         blank= False
     )
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL , on_delete=models.CASCADE
-        # USER  
+        settings.AUTH_USER_MODEL , on_delete=models.CASCADE , related_name="USER_Categorys"
+        # USER  s
     )
     
     followers_katalog = models.ManyToManyField(
@@ -91,16 +119,41 @@ class Post(models.Model):
     #   this is re
     def append_urls_like(self):
         return reverse(
-            'like_post' , 
+            'BLOG:like_post' , 
             kwargs={
                 'post_id':self.id
 
             }
         )
+    def get_absolute_url(self):
+        return reverse(
+            'BLOG:like_post' , 
+            kwargs={
+                'post_id':self.id
 
+            }
+        )
+    # create a simple manager 
+    tags = TaggableManager() # create migrate from database 
+    """
+    {TAGS CAN BE CONNECTOR FROM A NOTHER MODELS AND GET THE PARAMERTS FROM OWN MODELS AND IT WILL IMPLMENTING according to OWN MODELS }
+    """
+    # in sql we dont have casendsititved 
+    def get_the_tags_name_list(self):
+        list_reverse = []
+        for tags_objects in self.tags.all():
+            print(tags_objects)
+            list_reverse.append(
+                reverse( # this is return reversr from views all hashtak 
+                    'BLOG:account_page_tags' , 
+                    kwargs={
+                        'Username':self.author.username , 
+                        'tagsurls':tags_objects.slug
+                    }
 
-
-
+                )
+            )
+            return list_reverse
 class Media(models.Model):
     post = models.ForeignKey(
         Post , on_delete=models.CASCADE , verbose_name=_("Post") , related_name='POST_MEDIA'
@@ -122,6 +175,7 @@ class Transmisson(models.Model):
     post = models.ForeignKey(
         Post , on_delete=models.CASCADE , verbose_name=_("Post") ,related_name='POST_TRANS'
     )
+    # user foring keys 
     like = models.BigIntegerField(verbose_name=_('like'))
     dislike = models.BigIntegerField(verbose_name=_('dslike'))
     share = models.BigIntegerField(verbose_name=_('share'))
@@ -153,10 +207,10 @@ class Commants(models.Model):
     )
     TEXT = models.TextField(max_length=1000 ,
     blank= False , verbose_name=_("text"))
-    like = models.BigIntegerField()
-    dilike = models.BigIntegerField()
-    report = models.CharField(max_length=155)
-    media = models.FileField() # this is for comment like gif 
+    like = models.BigIntegerField(null=True , blank=True)
+    dilike = models.BigIntegerField(null=True , blank=True)
+    report = models.CharField(max_length=155 , null=True , blank=True)
+    media = models.FileField(null=True , blank=True) # this is for comment like gif 
     type_commant = models.CharField(
         max_length=2 , 
         choices=TypeComment , 
@@ -166,7 +220,7 @@ class Commants(models.Model):
     commented_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        return "%s %s from the post id of %i "%(self.user , self.TEXT ,  self.post.id)
+        return "%s %s from the post id of %i "%( self.user , self.TEXT ,  self.post.id)
     class Meta:
         ordering = [
             'post'
@@ -174,8 +228,13 @@ class Commants(models.Model):
         indexes = [
             models.Index(fields=['post'])
         ]
-        
+    def include_username(self):
+        return reverse(
+            'BLOG:account_page' , 
+            args=[self.user.username]
+        )
 # the simple system design for all person 
+# we have to add api for comment like and dis like but now we dont need 
 class TAGS(models.Model):
     name_tags = models.CharField(max_length=120 ,  verbose_name=_("typeoff commant"))
     post = models.ManyToManyField(

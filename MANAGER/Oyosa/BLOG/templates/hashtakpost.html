@@ -1,0 +1,31 @@
+{% extends "nav.html" %}
+{% load my_blog %}
+{% block linker %}
+  {% include "hashcss.html" %}
+  {% include "link.html" %}
+  {% include  "scrollC.html" %}
+{% endblock %}
+{% block content %}
+{% block title %}
+  #{{name}}
+{% endblock %}
+<div class="content">
+	{% for post in posts %}
+
+	<ul class="team">
+		<li class="member co-funder">
+			<div class="thumb"><img src="https://assets.codepen.io/3/internal/avatars/users/default.png?fit=crop&format=auto&height=120&width=120"></div>
+			<div class="description">
+				<p>{{post.body}}<br>
+		<a href="{% url 'BLOG:User_accounts' post.author.username %}">@{{post.author.username}}</a></p>
+			</div>
+		</li>
+
+	</ul>
+
+	{% endfor %}
+	
+	<h4>#{{name}} count is {% count_hastack name  %} </h4>
+
+</div>
+{% endblock %}

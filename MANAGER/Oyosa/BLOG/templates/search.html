@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{search}}</title>
+
+    {% include "link.html" %}
+
+   
+</head>
+<body>
+    <form method="get">
+        {{form.as_p}}
+        <input type="submit" , value="search">
+    </form> <br><br>
+{% for user in posts  %}
+<div>
+    <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+    <h4>{{user.title}}</h4><br>
+    <hr class="w3-clear">
+    <p>{{user.body}}</p>
+
+</div>
+{% endfor %}
+
+</body>
+</html>

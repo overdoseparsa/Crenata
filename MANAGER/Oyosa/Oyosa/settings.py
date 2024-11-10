@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-hxc8hu!y85i38vg%yxykw&l9l1xu=c7oq4#4b@$u2v7dao^s=2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
-
+SITE_ID = 1
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize' , 
+    'django.contrib.humanize' ,  # this is for timezone templaets filter
+    'django.contrib.postgres' , 
     'BLOG.apps.BlogConfig' , 
-    
-    
-]
+    'taggit' , # this is taggit  , 
+    'django.contrib.sites' , 
+    'django.contrib.sitemaps' , # this is get the google Engine the map of nmy site in searhcing 
+    'JsonModels.apps.JsonmodelsConfig' , # this is from json models we will createit  , 
+    'tasks' , # this is for adding task to the my projects 
+    'OYASALOG.apps.OyasalogConfig' ,   # this is for new app inhertacne from django.contrib.auth from genrate auhtncations  ,
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Oyosa.urls'
-print(Path.joinpath(BASE_DIR , '../BLOG/templates'))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -78,11 +83,17 @@ WSGI_APPLICATION = 'Oyosa.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+# load and dump data in python ERROR:  must be superuser to alter superuser roles or change superuser attribute
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'blog' , 
+        'USER':'parsa' , 
+        'PASSWORD':'z3m31383' , 
+        'HOST':'127.0.0.1' , 
+        'POST':'5432' , 
+
     }
 }
 
@@ -122,7 +133,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = 'static/'
-print(STATIC_ROOT)
 # STATICFILES_DIRS = [
 #    Path.joinpath('../BLOG/templates' , BASE_DIR),
 # ]
