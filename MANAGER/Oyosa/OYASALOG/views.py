@@ -7,7 +7,6 @@ from django.http import HttpRequest
 # create decorator like django ninja 
 
 class BaseViewLoggin(DCAV.LoginView):
-    next_page = 'BLOG:account_page'
     data_cahce = []
     
 
